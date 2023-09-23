@@ -14,8 +14,12 @@ def btn_click(item):
             expression = ""
 
         datafield['state'] = "readonly"
-    except:
-        pass
+    except ZeroDivisionError:
+        datafield.delete(0, END)
+        datafield.insert(0, 'Ошибка (деление на 0)')
+    except SyntaxError:
+        datafield.delete(0, END)
+        datafield.insert(0, 'Ошибка')
 
 def bt_clear():
     global expression
@@ -25,7 +29,7 @@ def bt_clear():
     datafield['state'] = "readonly"
 
 root = Tk()
-root.geometry("400x400")#Размер окна
+root.geometry("268x288")#Размер окна
 root.title("Калькулятор by 4IP")#Заголовок
 root.resizable(0, 0)
 frame_calcul = Frame(root)#Создание виджета
@@ -44,6 +48,5 @@ for row in range(4):
     for col in range(4):
         Button(root, width=2, height=3, text=buttons[row][col],
                command=lambda row=row, col=col: btn_click(buttons[row][col])).grid(row=row + 2, column=col, sticky="nsew", padx=1, pady=1)
-
 
 root.mainloop()
