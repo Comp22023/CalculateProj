@@ -60,4 +60,3 @@ for row in range(4):
 
 
 root.mainloop()
-#нешка готова
