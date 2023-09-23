@@ -38,6 +38,12 @@ frame_calcul.grid(row=0, column=0, columnspan=4, sticky="nsew")#Оформлен
 datafield = Entry(frame_calcul, font='Arial 15 bold', width=24, state="readonly")
 datafield.pack(fill=BOTH)
 
+buttons = (('7', '8', '9', '/', '4'),
+           ('4', '5', '6', '*', '4'),
+           ('1', '2', '3', '-', '4'),
+           ('0', '.', '=', '+', '4')
+           )
+
 expression = ""
 
 
