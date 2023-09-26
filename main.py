@@ -69,4 +69,4 @@ for row in range(4):
 
 
 root.mainloop()
-#Комментарий в ветке main
+#Комментарий в ветке main после merge
