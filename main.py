@@ -29,8 +29,9 @@ def bt_clear():
     datafield['state'] = "readonly"
 
 root = Tk() #Создание объекта
-root.geometry("268x288")#Размер окна
+root.geometry("268x288+100+200")#Размер окна
 root.title("Калькулятор by 4IP")#Заголовок
+
 
 root.resizable(0, 0)
 frame_calcul = Frame(root)#Создание виджета
