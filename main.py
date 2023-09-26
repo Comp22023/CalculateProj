@@ -69,4 +69,4 @@ for row in range(4):
 
 
 root.mainloop()
-#Удалние конфликта
+#Комментарий в ветке main
