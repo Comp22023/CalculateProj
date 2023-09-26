@@ -14,8 +14,12 @@ def btn_click(item):
             expression = ""
 
         datafield['state'] = "readonly"
-    except:
-        pass
+    except ZeroDivisionError:
+        datafield.delete(0, END)
+        datafield.insert(0, 'Ошибка (деление на 0)')
+    except SyntaxError:
+        datafield.delete(0, END)
+        datafield.insert(0, 'Ошибка')
 
 def bt_clear():
     global expression
@@ -24,9 +28,8 @@ def bt_clear():
     datafield.delete(0, END)
     datafield['state'] = "readonly"
 
-root = Tk()
-
-root.geometry("335x420")#Размер окна
+root = Tk() #Создание объекта
+root.geometry("268x288")#Размер окна
 root.title("Калькулятор by 4IP")#Заголовок
 
 root.resizable(0, 0)
@@ -39,6 +42,12 @@ def get_rgb(rgb):
     return "#%02x%02x%02x" % rgb
 datafield = Entry(frame_calcul, font='Arial 15 bold', width=30, state="readonly", foreground="#004D40")
 datafield.pack(fill=BOTH)
+
+buttons = (('7', '8', '9', '/', '4'),
+           ('4', '5', '6', '*', '4'),
+           ('1', '2', '3', '-', '4'),
+           ('0', '.', '=', '+', '4')
+           )
 
 expression = ""
 
