@@ -28,7 +28,7 @@ def bt_clear():
     datafield.delete(0, END)
     datafield['state'] = "readonly"
 
-root = Tk()
+root = Tk() #Создание объекта
 root.geometry("268x288")#Размер окна
 root.title("Калькулятор by 4IP")#Заголовок
 root.resizable(0, 0)
@@ -54,5 +54,6 @@ for row in range(4):
     for col in range(4):
         Button(root, width=2, height=3, text=buttons[row][col],
                command=lambda row=row, col=col: btn_click(buttons[row][col])).grid(row=row + 2, column=col, sticky="nsew", padx=1, pady=1)
+
 
 root.mainloop()
